@@ -78,4 +78,20 @@ $(document).ready(function() {
     }
   });
 
+  var voiceButton$ = $('.voice-button');
+  var voice$ = $('.voice')
+  voiceButton$.click(function() {
+    if( $('.voice-logo').attr('class').includes('glyphicon-play') ) {
+      voiceButton$.html('<span class="glyphicon glyphicon-stop voice-logo" aria-hidden="true"></span> Stop Voice Sample');
+      voice$.trigger('play');
+    } else {
+      voiceButton$.html('<span class="glyphicon glyphicon-play voice-logo" aria-hidden="true"></span> Play Voice Sample');
+      voice$.trigger('load');
+    }
+  })
+
+  voice$.on('ended', function() {
+    voiceButton$.html('<span class="glyphicon glyphicon-play voice-logo" aria-hidden="true"></span> Play Voice Sample');
+  })
+
 });
