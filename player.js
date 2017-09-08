@@ -3,6 +3,9 @@ $(window).on("load", function() {
   var playing = 0;
   var offvocalOn = true;
   var timer = 0;
+  var check = 0;
+
+  $('#name').text("Please select UTAUloid to make it sing!");
 
   $('#offvocal')[0].play();
   $('#printto')[0].play();
